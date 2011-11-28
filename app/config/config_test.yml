@@ -1,0 +1,25 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true
+    
+mink:
+    base_url: https://system.sandbox.netsuite.com/downpage/US/netsuite.html
+    default_session:  selenium
+    selenium: ~
+
+netsuite:
+    username: %netsuite_username%
+    password: %netsuite_password%
+    
+     

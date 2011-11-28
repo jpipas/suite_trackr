@@ -1,0 +1,7 @@
+parameters:
+#    entertainment_net_suite.example.class: Entertainment\NetSuiteBundle\Example
+
+services:
+#    entertainment_net_suite.example:
+#        class: %entertainment_net_suite.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
