@@ -83,4 +83,8 @@
 [PHP-Selenium]
 	git=https://github.com/alexandresalome/PHP-Selenium.git
 	target=/selenium
+
+[FOSUserBundle]
+  git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
+  target=bundles/FOS/UserBundle
 	

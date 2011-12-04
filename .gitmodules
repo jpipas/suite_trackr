@@ -1,0 +1,3 @@
+[submodule "vendor/bundles/Stof/DoctrineExtensionsBundle"]
+	path = vendor/bundles/Stof/DoctrineExtensionsBundle
+	url = git://github.com/stof/StofDoctrineExtensionsBundle.git
