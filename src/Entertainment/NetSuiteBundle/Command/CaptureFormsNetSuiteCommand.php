@@ -9,6 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use Selenium\Driver\Client;
 use	Selenium\Driver\Locator;
+
 /**
  * NetSuite tool that allows you to capture custom form configurations.
  *
@@ -37,7 +38,7 @@ class CaptureFormsNetSuiteCommand extends NetSuiteCommand {
 		$page->findField('email')->setValue($this->getContainer()->getParameter('netsuite_username'));
 		$page->findField('password')->setValue($this->getContainer()->getParameter('netsuite_password'));
 		$session->executeScript("document.forms[0].elements['jsenabled'].value = 'T';document.forms[0].submit();");
-		$driver->getBrowser()->waitForPageToLoad(6000);
+		$driver->getBrowser()->waitForCondition("selenium.browserbot.getCurrentWindow().document.getElementById('_searchstring');",8000);
 		$session->visit("https://system.sandbox.netsuite.com/app/common/custom/custform.nl?id=150&nl=F&ft=TRANSACTION&tt=Opprtnty&ol=F&e=T");
 		$driver->getBrowser()->captureEntirePageScreenshot("/Users/jeffpipas/Desktop/newScreenshot.png",null);
 		$output->writeln("<comment>Current Url: ".$session->getCurrentUrl()."</comment>");

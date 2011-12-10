@@ -17,6 +17,7 @@ It is currently in the **very** early stages of development.
 
 ### Demo'ing Automation (with a sandbox account)
 - Start selenium-server (java -jar selenium-server-standalone-2.x.x.jar)
+- run `git submodule update --init`
 - Modify app/config/parameters.ini with your netsuite username and password
 - run `app/console netsuite:capture-forms 123`
 - Selenium should fire-up and log into netsuite.

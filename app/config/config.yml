@@ -29,7 +29,7 @@ assetic:
     # java: /usr/bin/java
     filters:
         cssrewrite: ~
-        # closure:
+        # closure:1
         #     jar: %kernel.root_dir%/java/compiler.jar
         # yui_css:
         #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
@@ -71,3 +71,4 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: Entertainment\NetSuiteBundle\Entity\SuiteUser
+
