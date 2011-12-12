@@ -1,13 +1,392 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <!-- Framework CSS -->
+   	{% stylesheets 'bundles/entertainmentnetsuite/css/*' %}
+		<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="markitup/jquery.markitup.pack.js"></script>
+    <script type="text/javascript" src="markitup/sets/default/set.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="facebox/facebox.js"></script>
+    <script language="javascript" type="text/javascript" src="js/tabs.js"></script>
+    
+    <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE9.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+		
+		$(".sidebarcontent").hide(); 
+	
+		$(".sidebarheader").toggle(function(){
+			$(this).addClass("activesidebar");
+			}, function () {
+			$(this).removeClass("activesidebar");
+		});
+	
+		$(".sidebarheader").click(function(){
+			$(this).next(".sidebarcontent").slideToggle("slow");
+		});
+		
+		$("tbody tr:nth-child(even)").addClass("even");
+		
+		$('a[rel*=facebox]').facebox()
+	
+	});
+	</script>
+    
+    <script type="text/javascript">
+	<!--
+	$(document).ready(function()	{
+		// Add markItUp! to your textarea in one line
+		// $('textarea').markItUp( { Settings }, { OptionalExtraSettings } );
+		$('.markItUp').markItUp(mySettings);
+		
+		// You can add content from anywhere in your page
+		// $.markItUp( { Settings } );	
+		$('.add').click(function() {
+			$.markItUp( { 	openWith:'<opening tag>',
+							closeWith:'<\/closing tag>',
+							placeHolder:"New content"
+						}
+					);
+			return false;
+		});
+		
+		// And you can add/remove markItUp! whenever you want
+		// $(textarea).markItUpRemove();
+		$('.toggle').click(function() {
+			if ($(".markItUp.markItUpEditor").length === 1) {
+				$(".markItUp").markItUpRemove();
+				$("span", this).text("get markItUp! back");
+			} else {
+				$('.markItUp').markItUp(mySettings);
+				$("span", this).text("remove markItUp!");
+			}
+			return false;
+		});
+	});
+	-->
+	</script>
+    
+    <script type="text/javascript" id="js">$(document).ready(function() {
+		// call the tablesorter plugin
+		$("table").tablesorter({
+			// sort on the first column and third column, order asc
+			sortList: [[0,0]]
+		});
+	}); </script>
+    
+</head>
+
+<body>
+	 {% block body %}{% endblock %}
+     {% block javascripts %}{% endblock %}
+<div id="top">
+	<div id="header">
+    	<ul>
+        	<li class="selected"><a href="#">Dashboard</a> &sdot;</li>
+            <li><a href="#">Content</a> &sdot;</li>
+            <li><a href="#">Reports</a> &sdot;</li>
+            <li><a href="#">Users</a> &sdot;</li>
+            <li><a href="#">Media Library</a> &sdot;</li>
+            <li><a href="#">Events</a> &sdot;</li>
+            <li><a href="#">Newsletter</a> &sdot;</li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    	<h3>Web Site Name</h3>        
+    </div><!-- header -->
+    
+    <div id="menu">
+    	<div class="container_12">
+        	<div class="grid_7">
+            	<em>welcome back</em> <strong>Username</strong> 
+                <a href="#" class="inbox">Inbox</a> <a href="#" class="profile">Profile</a> <a href="#" class="logout">Logout</a>
+            </div><!-- grid_7 -->
+            <div class="grid_5 right">
+            	<div class="notice">Here's small alert. You have (1) new message | <a href="#">Inbox</a></div>
+            </div><!-- grid_5 -->
+        </div><!-- container_12 -->
+    </div><!-- menu -->
+    <div id="content" class="container_12">
+    	<div class="grid_3">
+        	<div class="sidebarbox">
+            	<div class="sidebarheader">
+                	<a href="#">Box Heading</a>
+                </div><!-- sidebarheader --> 
+                <div class="sidebarcontent">
+                	<ul>
+                    	<li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                    </ul>
+                </div>
+            </div><!-- sidebarbox -->
+            
+            <div class="sidebarbox">
+            	<div class="sidebarheader">
+                	<a href="#">Box Heading</a>
+                </div><!-- sidebarheader --> 
+                <div class="sidebarcontent">
+                	<ul>
+                    	<li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                    </ul>
+                </div>
+            </div><!-- sidebarbox -->
+            
+            <div class="sidebarbox">
+            	<div class="sidebarheader">
+                	<a href="#">Box Heading</a>
+                </div><!-- sidebarheader --> 
+                <div class="sidebarcontent">
+                	<ul>
+                    	<li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                        <li><a href="#">Link to different admin section</a></li>
+                    </ul>
+                </div>
+            </div><!-- sidebarbox -->
+            
+        </div><!-- grid 3 -->
+        <div class="grid_9">
+        	<div class="mainbox nav">
+            	<div class="maincont">
+                	<ul>
+                    	<li><a href="#quickedit" rel="facebox"><img src="/bundles/entertainmentnetsuite/images/icons/dashboard.png" alt="" border="0" />Dashboard</a>
+                        <div id="quickedit" style="display:none;">
+                    	<h3>Here's a modal</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                        </div>
+                        </li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/content.png" alt="" border="0" />Content</a></li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/reports.png" alt="" border="0" />Reports</a></li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/users.png" alt="" border="0" />Users</a></li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/media.png" alt="" border="0" />Media</a></li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/events.png" alt="" border="0" />Events</a></li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/newsletter.png" alt="" border="0" />Newsletter</a></li>
+                        <li><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/settings.png" alt="" border="0" />Settings</a></li>
+                    </ul>
+                </div><!-- maincont -->
+            </div><!-- mainbox -->
+            
+            <div class="grid_5 mainleft">
+            	<div class="mainbox">
+                    <div class="maincont">
+                       <div class="mainhead">
+                       		Box Heading
+                       </div><!-- mainhead -->
+                       <div class="maintext">
+                       		<img src="/bundles/entertainmentnetsuite/images/layout/graph.png" alt="" border="0" />
+                            <form action="#">
+                            <label>form input label</label>
+                            <input type="text" />
+                            <label>form input label</label>
+                            <input type="text" />
+                            <input type="submit" class="submit" value="submit" />
+                            </form>
+                       </div><!-- maintext -->
+                    </div><!-- maincont -->
+                </div><!-- mainbox -->
+            </div><!-- grid 5 -->
+            
+            <div class="grid_3 mainright">
+           
+           		<div class="mainbox">
+                    <div class="maincont">
+                       <div class="mainhead">
+                       		Box Heading
+                       </div><!-- mainhead -->
+                       <div class="maintext">
+                       		<div class="notice">Here's small alert.</div>
+                            <div class="error">Here's an error message.</div>
+                            <div class="success">Settings saved.</div>
+                       </div><!-- maintext -->
+                    </div><!-- maincont -->
+                </div><!-- mainbox -->
+                
+                <div class="mainbox">
+                    <div class="maincont">
+                       <div class="mainhead">
+                       		<a href="#change" rel="facebox" class="change">Change Feed</a>Latest Headlines
+                            <div id="change" style="display:none;">
+                            	<h2>Change the feed from which this news is pulled</h2>
+                                <input />
+                                <input class="submit" type="submit" />
+                            </div>
+                       </div><!-- mainhead -->
+                       <div class="maintext">
+                       		<div class="post">
+                            <a href="#">Web site name</a>
+                            <p>here's a short excerpt from a news article. blah blah blah cuti</p>
+                            </div>
+                            <div class="post">
+                            <a href="#">Web site name</a>
+                            <p>here's a short excerpt from a news article. blah blah blah cuti</p>
+                            </div>
+                            <div class="post">
+                            <a href="#">Web site name</a>
+                            <p>here's a short excerpt from a news article. blah blah blah cuti</p>
+                            </div>
+                       </div><!-- maintext -->
+                    </div><!-- maincont -->
+                </div><!-- mainbox -->
+           
+            </div><!-- grid 3 -->
+            
+            <div style="clear:both;"></div>
+            
+            <div class="table">
+            	<div class="mainbox">
+                    <div class="maincont">
+                       <div class="mainhead">
+                       		Box Heading
+                       </div><!-- mainhead -->
+                       <div class="maintext">
+                       		<h2>Sample textarea with toolbar</h2>
+                       		<textarea class="markItUp"></textarea>
+                            <h2>The following tabular data is sortable!</h2>
+                       		<table class="tablesorter">
+                            	<thead>
+                                	<tr>
+                                    	<th><span>Name</span></th>
+                                    	<th><span>Date</span></th> 
+                                    	<th><span>Email<span></th>   
+                                    	<th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                	<tr>
+                                    	<td><a href="#">Joe Bloggs</a></td>
+                                        <td>12.31.10</td>
+                                        <td><a href="#">joe@bloggs.com</a></td>
+                                        <td><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/edit.png" alt="" border="0" /></a><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/delete.png" alt="" border="0" /></a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#">Fred Bloggs</a></td>
+                                        <td>10.31.10</td>
+                                        <td><a href="#">fred@bloggs.com</a></td>
+                                        <td><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/edit.png" alt="" border="0" /></a><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/delete.png" alt="" border="0" /></a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#">Susan Bloggs</a></td>
+                                        <td>12.21.10</td>
+                                        <td><a href="#">susan@blogs.com</a></td>
+                                        <td><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/edit.png" alt="" border="0" /></a><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/delete.png" alt="" border="0" /></a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#">Mary Bloggs</a></td>
+                                        <td>04.31.10</td>
+                                        <td><a href="#">mary@bloggs.com</a></td>
+                                        <td><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/edit.png" alt="" border="0" /></a><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/delete.png" alt="" border="0" /></a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#">Web Bloggs</a></td>
+                                        <td>06.14.10</td>
+                                        <td><a href="#">web@bloggs.com</a></td>
+                                        <td><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/edit.png" alt="" border="0" /></a><a href="#"><img src="/bundles/entertainmentnetsuite/images/icons/delete.png" alt="" border="0" /></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+                            
+                            <ul class="tabs">
+                    
+                                <li><a href="#tab1">Tab 1</a></li>
+                                <li><a href="#tab2">Tab 2</a></li>
+                                <li><a href="#tab3">Tab 3</a></li>
+                        
+                            </ul>
+                            
+                            <div class="tab_container">
+                            
+                                <div id="tab1" class="tab_content">
+                                    
+                                    <h4>Tab</h4>
+                                    
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                                    
+                                </div><!--/tab1-->
+                                
+                                <div id="tab2" class="tab_content">
+                                    
+                                    <h4>Tab</h4>
+                                    
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                                    
+                                </div><!--/tab2-->
+                                
+                                <div id="tab3" class="tab_content">
+                                    
+                                    <h4>Tab</h4>
+                                    
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                                    
+                                </div><!--/tab3-->
+                                
+                            </div><!--/tab_container-->
+                            <br class="clear" />
+
+                            <h2>Header Level 2</h2>
+                                       
+                            <ol>
+                               <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                               <li>Aliquam tincidunt mauris eu risus.</li>
+                            </ol>
+                            
+                            <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+                            
+                            <h3>Header Level 3</h3>
+                            
+                            <ul>
+                               <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                               <li>Aliquam tincidunt mauris eu risus.</li>
+                            </ul>
+                            
+                            <pre><code>
+                            #header h1 a { 
+                                display: block; 
+                                width: 300px; 
+                                height: 80px; 
+                            }
+                            </code></pre>
+                            
+                            
+                       </div><!-- maintext -->
+                    </div><!-- maincont -->
+                </div><!-- mainbox -->
+            </div><!-- grid 8 -->
+            
+            <div style="clear:both;"></div>               
+            
+        </div><!-- grid 9 -->
+        
+         <div class="footer">
+         	<a href="http://www.guitemplates.com" title="Premium Graphic User Interface templates"><img src="images/logos/guitemplates.png" alt="GUI Templates" border="0" /></a>        	
+			Any copyright information can go in here
+        </div><!-- footer --> 
+        <div style="clear:both;"></div>             
+    </div><!-- container 12 -->
+</div><!-- top -->	
+
+</body>
 </html>

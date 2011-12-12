@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Entertainment\NetSuiteBundle\Entity\Form
  *
- * @ORM\Table(name="form")
+ * @ORM\Table(name="netsuite_form")
  * @ORM\Entity
  */
-class Form
+class NetSuiteForm
 {
     /**
      * @var integer $id

@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Entertainment\NetSuiteBundle\Entity\Script
  *
- * @ORM\Table(name="script")
+ * @ORM\Table(name="suitescript")
  * @ORM\Entity
  */
-class Script
+class SuiteScript
 {
     /**
      * @var integer $id
