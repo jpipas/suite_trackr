@@ -156,8 +156,8 @@ width:231px;
 }
 
 p.link a { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; margin-right:2px; }
-p.link a span { float:left; height:27px; background:transparent url(/bundles/entertainmentnetsuite/images/buttons/button.gif) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/27px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; text-shadow:1px 1px rgba(0,0,0,0.3); cursor:pointer; text-transform:uppercase; font-size:11px; }
-p.link a:hover span { background:transparent url(/bundles/entertainmentnetsuite/images/buttons/button_hover.gif) 0 0 no-repeat; }
+p.link a span { float:left; height:27px; background:transparent url(/bundles/entertainmentnetsuite/images/icons/button.png) 0 0 no-repeat; padding:0 0 0 8px; font:bold 12px/27px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; text-shadow:1px 1px rgba(0,0,0,0.3); cursor:pointer; text-transform:uppercase; font-size:11px; }
+p.link a:hover span { background:transparent url(/bundles/entertainmentnetsuite/images/icons/button_hover.gif) 0 0 no-repeat; }
 p.link span span { background-position:100% 0; padding:0 12px 0 4px; }
 p.link a:hover span span { background-position:100% 0; padding:0 12px 0 4px; }
 

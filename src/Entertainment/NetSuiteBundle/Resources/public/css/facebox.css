@@ -1,23 +1,23 @@
 /* @override http://guitemplates.com/demothemes/newspaper/facebox/facebox.css */
 
 #facebox .b {
-  background:url(b.png);
+  background:url(/bundles/entertainmentnetsuite/images/icons/b.png);
 }
 
 #facebox .tl {
-  background:url(tl.png);
+  background:url(/bundles/entertainmentnetsuite/images/icons/tl.png);
 }
 
 #facebox .tr {
-  background:url(tr.png);
+  background:url(/bundles/entertainmentnetsuite/images/icons/tr.png);
 }
 
 #facebox .bl {
-  background:url(bl.png);
+  background:url(/bundles/entertainmentnetsuite/images/icons/bl.png);
 }
 
 #facebox .br {
-  background:url(br.png);
+  background:url(/bundles/entertainmentnetsuite/images/icons/br.png);
 }
 
 #facebox {
