@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    
+   	{% stylesheets 'bundles/entertainmentnetsuite/css/*' %}
+		<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/bundles/entertainmentnetsuite/js/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="/bundles/entertainmentnetsuite/js/markitup/sets/default/set.js"></script>
+    <script language="javascript" type="text/javascript" src="/bundles/entertainmentnetsuite/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="/bundles/entertainmentnetsuite/js/facebox.js"></script>
+    <script language="javascript" type="text/javascript" src="/bundles/entertainmentnetsuite/js/tabs.js"></script>
+
+    
+    <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta3)/IE9.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+		
+		$(".sidebarcontent").hide(); 
+	
+		$(".sidebarheader").toggle(function(){
+			$(this).addClass("activesidebar");
+			}, function () {
+			$(this).removeClass("activesidebar");
+		});
+	
+		$(".sidebarheader").click(function(){
+			$(this).next(".sidebarcontent").slideToggle("slow");
+		});
+		
+		$("tbody tr:nth-child(even)").addClass("even");
+		
+		$('a[rel*=facebox]').facebox()
+	
+	});
+	</script>
+    
+    <script type="text/javascript">
+	<!--
+	$(document).ready(function()	{
+		// Add markItUp! to your textarea in one line
+		// $('textarea').markItUp( { Settings }, { OptionalExtraSettings } );
+		$('.markItUp').markItUp(mySettings);
+		
+		// You can add content from anywhere in your page
+		// $.markItUp( { Settings } );	
+		$('.add').click(function() {
+			$.markItUp( { 	openWith:'<opening tag>',
+							closeWith:'<\/closing tag>',
+							placeHolder:"New content"
+						}
+					);
+			return false;
+		});
+		
+		// And you can add/remove markItUp! whenever you want
+		// $(textarea).markItUpRemove();
+		$('.toggle').click(function() {
+			if ($(".markItUp.markItUpEditor").length === 1) {
+				$(".markItUp").markItUpRemove();
+				$("span", this).text("get markItUp! back");
+			} else {
+				$('.markItUp').markItUp(mySettings);
+				$("span", this).text("remove markItUp!");
+			}
+			return false;
+		});
+	});
+	-->
+	</script>
+    
+    <script type="text/javascript" id="js">$(document).ready(function() {
+		// call the tablesorter plugin
+		$("table").tablesorter({
+			// sort on the first column and third column, order asc
+			sortList: [[0,0]]
+		});
+	}); </script>
+    
+</head>
+
+<body>
+
+<div id="top">
+	<div id="header">
+    	<ul>
+        	<li class="selected"><a href="#">Dashboard</a> &sdot;</li>
+            <li><a href="#">Content</a> &sdot;</li>
+            <li><a href="#">Reports</a> &sdot;</li>
+            <li><a href="#">Users</a> &sdot;</li>
+            <li><a href="#">Media Library</a> &sdot;</li>
+            <li><a href="#">Events</a> &sdot;</li>
+            <li><a href="#">Newsletter</a> &sdot;</li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    	<h3>Web Site Name</h3>        
+    </div><!-- header -->
+    
+    <div id="menu">
+    	<div class="container_12">
+        	<div class="grid_7">
+            	<em>Hello there</em> <strong>Guest</strong> 
+            </div><!-- grid_7 -->
+            <div class="grid_5 right">
+            </div><!-- grid_5 -->
+        </div><!-- container_12 -->
+    </div><!-- menu -->
+ <div class="container_12">
+
+	<div class="grid_6 prefix_3 suffix_3">
+    
+    	<div class="main login" style="width:auto; padding:20px;">
+        
+        	<div class="content-box">
+            
+            	<div class="content-header">
+                
+                	<h3>Login</h3>
+                
+                </div>
+                
+                	<div class="notice">
+                        
+                        You have entered an incorrect password
+                    
+                    </div>
+                    
+                    <div class="error">
+                    
+                        Your account has been suspended
+                    
+                    </div>
+                    
+                    <div class="success">
+                    
+                        Thank you for logging in
+                    
+                    </div>
+                
+                	<p>Please fill in the following form to log in:</p>
+                            
+                	<div class="lileft">
+                        <label>Username</label>
+                        <input />
+                    </div>
+                    
+					<div class="liright">
+                        <label>Password</label>                    
+                        <input />
+                    </div>
+                    
+                    <p class="link">
+                    	<a href="logged-in.html"><span><span>Log In</span></span></a>
+                    </p>
+                    
+                    
+                    <div class="clear"></div>
+                	            
+            </div>
+    
+    	</div>
+    
+    </div>
+
+</div>
+</div><!-- top -->	
+
+</body>
+</html>
